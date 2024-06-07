@@ -1,0 +1,167 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Edit Project</b></h4>
+          </div>
+          <div class="col-sm-6 container-back">
+            <a href="#" routerLink="/Home" class="back-btn">
+              <i class="fas fa-arrow-circle-left"></i> &nbsp;Back
+            </a>
+          </div>
+        </div>
+      </div>
+      <form #projectForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="name" class="p-t-b-10"
+                >Project Name <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                required
+                maxlength="255"
+                [(ngModel)]="project.name"
+                name="name"
+                #name="ngModel"
+              />
+              <div
+                *ngIf="name.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!name.errors?.['required']">
+                  Please enter Project Name
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="date_created" class="p-t-b-10"
+                >Start Date <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="date"
+                class="form-control"
+                id="date_created"
+                required
+                [(ngModel)]="project.date_created"
+                name="date_created"
+                #date_created="ngModel"
+              />
+              <div
+                *ngIf="date_created.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!date_created.errors?.['required']">
+                  Please enter Start Date
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10"
+                >Budget <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="budget"
+                required
+                maxlength="255"
+                [(ngModel)]="project.budget"
+                name="budget"
+                #budget="ngModel"
+                pattern="^[0-9]*$"
+              />
+              <div
+                *ngIf="budget.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!budget.errors?.['required']">
+                  Please enter Budget
+                </div>
+                <div [hidden]="!budget.errors?.['pattern']">
+                  Invalid budget format
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10"
+                >Leader <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <select
+                id="leader_id"
+                required
+                [(ngModel)]="project.leader_id"
+                name="leader_id"
+                #leader_id="ngModel"
+              >
+                <option
+                  *ngFor="let employee of employeesList"
+                  [ngValue]="employee.id"
+                  [selected]="employee.id === project.leader_id"
+                >
+                  {{ employee.first_name + " " + employee.last_name }}
+                </option>
+              </select>
+              <div
+                *ngIf="leader_id.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!leader_id.errors?.['required']">
+                  Please select a Leader
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10"
+                >Team <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <select
+                multiple
+                name="team"
+                id="team"
+                required
+                [(ngModel)]="addProjectForm.team"
+                (ngModelChange)="onTeamSelectionChange()"
+              >
+                <option
+                  value="{{ employee.id }}"
+                  *ngFor="let employee of employeesList"
+                >
+                  {{ employee.first_name + " " + employee.last_name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="update(projectForm)">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

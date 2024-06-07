@@ -1,0 +1,238 @@
+{
+  "task": [
+    {
+      "id": 1,
+      "nameTask": "Phân tích yêu cầu",
+      "projectId": 1,
+      "employeesId": 1,
+      "desc": "Phân tích các yêu cầu của khách hàng để team thực hiện",
+      "status": 0,
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "nameTask": "Thực hiện layout cho ứng dụng",
+      "projectId": 1,
+      "employeesId": 2,
+      "desc": "Thực hiện layout website, chú ý kỹ responsive",
+      "status": 0,
+      "priority": 1
+    },
+    {
+      "id": 8,
+      "nameTask": "Hướng dẫn sử dụng và bàn giao",
+      "projectId": 5,
+      "employeesId": 1,
+      "desc": "Hướng dẫn sử dụng cho khách hàng",
+      "status": 0,
+      "priority": 2
+    },
+    {
+      "id": 9,
+      "nameTask": "Testing 2",
+      "projectId": 4,
+      "employeesId": 2,
+      "desc": "Kiểm tra các tính năng bảo mật theo các yêu cầu đã nêu trong tài liệu dự án",
+      "status": 0,
+      "priority": 2
+    },
+    {
+      "nameTask": "Thiết kế Logo",
+      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "projectId": 1,
+      "employeesId": 4,
+      "status": 1,
+      "priority": 2,
+      "id": 10
+    },
+    {
+      "nameTask": "Thiết kế Logo",
+      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "projectId": "5",
+      "employeesId": 2,
+      "status": 1,
+      "priority": 2,
+      "id": 11
+    },
+    {
+      "nameTask": "Thiết kế web ",
+      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "projectId": "8",
+      "employeesId": 4,
+      "status": 1,
+      "priority": 1,
+      "id": 12
+    },
+    {
+      "nameTask": "Thiết kế web ",
+      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "projectId": "8",
+      "employeesId": "2",
+      "status": "1",
+      "priority": "1",
+      "id": 13
+    },
+    {
+      "nameTask": "Thiết kế web ",
+      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "projectId": "4",
+      "employeesId": "4",
+      "status": "1",
+      "priority": "1",
+      "id": 14
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "address": "123 Main St, City",
+      "phone": "0981640617"
+    },
+    {
+      "id": 2,
+      "first_name": "Janeaaa",
+      "last_name": "Smith",
+      "email": "jane.smith@example.com",
+      "address": "456 Elm St, City",
+      "phone": "0981640617"
+    },
+    {
+      "id": 4,
+      "first_name": "Đinh",
+      "last_name": "Tiến Công",
+      "email": "cong@gmail.com",
+      "address": "456 Elm St, City",
+      "phone": "0981640617"
+    },
+    {
+      "first_name": "dinh",
+      "last_name": "aaaaaaa",
+      "email": "admin@gmail.com",
+      "address": "aaa",
+      "phone": "0981640617",
+      "id": 5
+    },
+    {
+      "first_name": "Nguyễn",
+      "last_name": "Ánh Nguyệt",
+      "email": "admin@gmail.com",
+      "address": "kksdfsfdfffffffffffffffffffffffff",
+      "phone": "0981640614",
+      "id": 6
+    },
+    {
+      "first_name": "Nguyễn",
+      "last_name": "asdasdasd",
+      "email": "admin@gmail.com",
+      "address": "asdasd",
+      "phone": "0981640617",
+      "id": 7
+    }
+  ],
+  "project": [
+    {
+      "id": 1,
+      "nameProject": "Quản lý trại heo",
+      "dateCreate": "2022-03-01",
+      "money": 67000000,
+      "leader": 1,
+      "team": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "id": 2,
+      "nameProject": "Cây xanh công viên",
+      "dateCreate": "2022-03-01",
+      "money": 67000000,
+      "leader": 2,
+      "team": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "nameProject": "Website Du lịch Bụi",
+      "dateCreate": "2022-03-01",
+      "money": 67000000,
+      "leader": 4,
+      "team": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 5,
+      "nameProject": "Chăm sóc thú cưng",
+      "dateCreate": "2022-03-01",
+      "money": 67000000,
+      "leader": 4,
+      "team": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "nameProject": "Dự án 1",
+      "dateCreate": "2023-10-13",
+      "money": "1000000",
+      "leader": "2",
+      "team": [
+        4
+      ],
+      "id": 6
+    },
+    {
+      "nameProject": "Dự án 11111111111111111111",
+      "dateCreate": "2023-10-15",
+      "money": "1000000",
+      "leader": "5",
+      "team": [
+        2,
+        3
+      ],
+      "id": 7
+    },
+    {
+      "nameProject": "Dự án 11",
+      "dateCreate": "2023-10-19",
+      "money": "1000000",
+      "leader": "6",
+      "team": [
+        4
+      ],
+      "id": 8
+    },
+    {
+      "nameProject": "Dự án 11",
+      "dateCreate": "2023-10-03",
+      "money": "1000000",
+      "leader": "2",
+      "team": [
+        3,
+        4
+      ],
+      "id": 11
+    },
+    {
+      "nameProject": "Dự án 1",
+      "dateCreate": "2023-10-19",
+      "money": "1000000",
+      "leader": "2",
+      "team": [
+        2,
+        4
+      ],
+      "id": 12
+    }
+  ]
+}

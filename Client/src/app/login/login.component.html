@@ -1,0 +1,92 @@
+<body>
+  <div class="form-wrapper">
+    <main class="form-side">
+      <form
+        #frm1="ngForm"
+        action=""
+        class="log-in"
+        (ngSubmit)="xulyDN(frm1.value)"
+      >
+        <div class="form-welcome-row">
+          <h1>Welcome back Fpoly tasks!</h1>
+          <h2>Login with your account!</h2>
+        </div>
+        <div class="socials-row">
+          <a href="#" title="Use Apple" routerLink="/Signup">
+            <img
+              src="data:image/png;base64,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"
+              alt="Apple"
+            />
+            Continue with Fpoly account
+          </a>
+        </div>
+        <div class="socials-row">
+          <a href="#" title="Use Github" routerLink="/Signup">
+            <img src="../../assets/img/Account/google.png" alt="Google" />
+            Continue with Google account
+          </a>
+        </div>
+        <div class="divider">
+          <div class="divider-line"></div>
+          or
+          <div class="divider-line"></div>
+        </div>
+        <div class="text-field">
+          <label for="email">Email</label>
+          <input
+            ngModel
+            placeholder="Email"
+            type="email"
+            name="email"
+            id="email"
+            required
+          />
+          <div class="error-message">Email in incorrect format</div>
+        </div>
+        <div class="text-field">
+          <label for="password">Password</label>
+          <input
+            placeholder="Password"
+            ngModel
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
+          <div class="error-message">
+            Minimum 6 characters at least 1 Alphabet and 1 Number
+          </div>
+        </div>
+        <button class="my-form__button" type="submit">Sign In</button>
+        <div class="my-form__actions">
+          <div class="my-form__row">
+            <span>Don't have an account?</span>
+            <a href="#" routerLink="/Signup">Sign Up</a>
+          </div>
+        </div>
+      </form>
+    </main>
+    <aside class="info-side">
+      <div class="blockquote-wrapper">
+        <img
+          src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/aa/d2/47/aad2470f-eaeb-1680-f7da-d7199714471f/AppIcon-1x_U007emarketing-0-7-0-0-85-220.png/1200x630wa.png"
+          alt="Returns"
+          class="returns"
+        />
+        <blockquote>
+          Fpoly mission. This is a project and job management software as well
+          as job division for employees developed by the team of Fpoly company.
+        </blockquote>
+        <div class="author">
+          <img
+            src="https://play-lh.googleusercontent.com/0UNPGXC2cP3GdbREaJQyBUDlhgUZlKJ8janqR_O2rVlQwinIoStuRRIEVzIKPslZIQ"
+            alt="Avatar"
+            class="avatar"
+            style="object-fit: cover"
+          />
+          <span class="author-name">@fpoly</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</body>

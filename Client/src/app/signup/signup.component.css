@@ -1,0 +1,117 @@
+body {
+  background-color: coral;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-formRegister {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  width: 400px;
+  height: 600px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+form h1 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+form .img-register {
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+form .img-register img {
+  border-radius: 20px;
+  object-fit: contain;
+  height: 100%;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input-box div {
+  margin-bottom: 10px;
+}
+
+.input-box input {
+  color: #1d1d1d;
+  width: 270px;
+  border: 1px solid #dfe3e6;
+  height: 40px;
+  letter-spacing: 0.03rem;
+  outline: none;
+  background: #f1f2f3;
+  transition: 0.25s;
+  border-radius: 0.5rem;
+  text-indent: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.input-box input:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.input-box input:focus {
+  background-color: rgb(236, 236, 236);
+}
+
+.input-box label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-register {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(61, 99, 235);
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.text-login {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.text-login a {
+  margin: 0 7px;
+  font-size: 14px;
+}
+
+a {
+  color: black;
+}

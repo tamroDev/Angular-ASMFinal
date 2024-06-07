@@ -1,0 +1,30 @@
+<nav *ngIf="shouldShowHeader">
+  <div class="navBar-left">
+    <div class="logo" (click)="HomeClick()">
+      <img
+        src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n.png"
+        alt=""
+      />
+    </div>
+    <div class="item-bar">
+      <li *ngIf="check()" (click)="ProjectClick()">Project</li>
+      <li (click)="TaskClick()">Task</li>
+      <li *ngIf="check()" (click)="AddEmployee()">Member</li>
+    </div>
+  </div>
+  <div class="navBar-right">
+    <span class="employee" routerLink="/Login">
+      <b><i class="fas fa-user"></i></b>
+    </span>
+
+    <span *ngIf="isLogin()" class="employee">
+      <b class="nameContainer">
+        <p class="nameAuthor" (click)="EditEmployee()">{{ checkRole() }}</p></b
+      >
+    </span>
+    <span class="employee" *ngIf="isLogin()" (click)="logout()">
+      <b><i class="fas fa-sign-out-alt"></i></b>
+    </span>
+  </div>
+</nav>
+<router-outlet style="margin-top: 80px"></router-outlet>

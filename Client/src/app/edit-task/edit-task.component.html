@@ -1,0 +1,201 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Edit Task</b></h4>
+          </div>
+          <div class="col-sm-6 container-back">
+            <a href="#" routerLink="/Task" class="back-btn">
+              <i class="fas fa-arrow-circle-left"></i> &nbsp;Back
+            </a>
+          </div>
+        </div>
+      </div>
+      <form #editTaskForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="name" class="p-t-b-10"
+                >Task Name <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                required
+                maxlength="255"
+                [(ngModel)]="taskList.name"
+                name="name"
+                #name="ngModel"
+              />
+              <div
+                *ngIf="name.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!name.errors?.['required']">
+                  Please enter Task Name
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="description" class="p-t-b-10"
+                >Description <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                required
+                maxlength="255"
+                [(ngModel)]="taskList.description"
+                name="description"
+                #description="ngModel"
+              />
+              <div
+                *ngIf="description.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!description.errors?.['required']">
+                  Please enter Description
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="project_id" class="p-t-b-10"
+                >Project <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <select
+                id="assigned_to"
+                required
+                [(ngModel)]="taskList.project_id"
+                name="project_id"
+                #project_id="ngModel"
+              >
+                <option
+                  value="{{ project.id }}"
+                  *ngFor="let project of projectList"
+                >
+                  {{ project.name }}
+                </option>
+              </select>
+              <div
+                *ngIf="project_id.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!project_id.errors?.['required']">
+                  Please select a Project
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10"
+                >Assigned To <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <select
+                id="assigned_to"
+                required
+                [(ngModel)]="taskList.assigned_to"
+                name="assigned_to"
+                #assigned_to="ngModel"
+              >
+                <option
+                  value="{{ employee.id }}"
+                  *ngFor="let employee of employeesList"
+                >
+                  {{ employee.first_name + " " + employee.last_name }}
+                </option>
+              </select>
+              <div
+                *ngIf="assigned_to.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!assigned_to.errors?.['required']">
+                  Please select an employee
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="status" class="p-t-b-10"
+                >Status <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="status"
+                required
+                maxlength="255"
+                [(ngModel)]="taskList.status"
+                name="status"
+                #status="ngModel"
+              />
+              <div
+                *ngIf="status.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!status.errors?.['required']">
+                  Please enter Status
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10"
+                >Priority <span class="requiredStar">*</span></label
+              >
+            </div>
+            <div class="col-sm-9">
+              <select
+                id="priority"
+                required
+                [(ngModel)]="taskList.priority"
+                name="priority"
+                #priority="ngModel"
+              >
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+              </select>
+              <div
+                *ngIf="priority.errors && isSubmitted"
+                class="alert alert-danger validationError"
+              >
+                <div [hidden]="!priority.errors?.['required']">
+                  Please select a Priority
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button
+            class="btn btn-success"
+            (click)="update(editTaskForm.form.valid)"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>View Project</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Project" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content">
+        <tbody>
+          <tr>
+            <td>
+              <label><b>Tên Dự án</b></label>
+            </td>
+            <td>
+              <span>{{ project.name }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Ngày khởi tạo</b></label>
+            </td>
+            <td>
+              <span>{{ project.date_created | date: 'dd/MM/yyyy'  }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Số tiền</b></label>
+            </td>
+            <td>
+              <span>{{ project.budget }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Leader</b></label>
+            </td>
+            <td>
+              <div> <span>{{project.leader}}</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Thành viên </b></label>
+            </td>
+            <td>
+              <div><span>{{project.team}}</span></div>
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6 title">
+            <h4><b>Project Management</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <button class="btn" (click)="addProject()">
+              <button class="button">
+                ADD
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr class="center-align">
+              <th>Project Name</th>
+              <th>Start Date</th>
+              <th>Budget</th>
+              <th>Leader</th>
+              <!-- <th>Members</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projectList" class="center-align">
+              <td>{{ project.name }}</td>
+              <td>{{ project.date_created | date : "dd/MM/yyyy" }}</td>
+              <td>{{ project.budget | currency : "VND" }}</td>
+              <td>
+                <div *ngFor="let employee of employeesList">
+                  <span *ngIf="employee.id == project.leader_id">
+                    {{ employee.first_name + " " + employee.last_name }}
+                  </span>
+                </div>
+              </td>
+              <!-- <td> -->
+              <!-- <div *ngFor="let employee of employeesList">
+                <span *ngIf="project.team.includes(employee.id)">
+                  {{ employee.first_name + ' ' + employee.last_name + ',' }}
+                </span>
+              </div> -->
+              <!-- </td> -->
+              <!-- project.team.includes(employee.id): checks if employee.id exists in project.team -->
+              <td>
+                <a
+                  href="#"
+                  [routerLink]="['/ViewProject/', project.id]"
+                  class="btn"
+                >
+                  <button class="btn-action green">Details</button></a
+                >
+                <a
+                  href="#"
+                  [routerLink]="['/EditProject/', project.id]"
+                  class="btn"
+                  ><button class="btn-action blue">Edit</button></a
+                >
+                <button
+                  type="button"
+                  class="btn"
+                  (click)="deleteProjectConfirmation(project.id)"
+                >
+                  <button class="btn-action red">Delete</button>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td *ngIf="projectList.length == 0" colspan="6">
+                No projects available
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
